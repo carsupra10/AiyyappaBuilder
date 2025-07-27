@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Calendar } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { MapPin, Calendar } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -44,25 +44,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </span>
         </div>
       </div>
-      
+
       <div className="p-6">
         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">
           {title}
         </h3>
-        
+
         <div className="flex items-center text-gray-600 mb-2">
           <MapPin className="h-4 w-4 mr-1" />
           <span className="text-sm">{location}</span>
         </div>
-        
+
         <div className="flex items-center text-gray-600 mb-3">
           <Calendar className="h-4 w-4 mr-1" />
           <span className="text-sm">{date}</span>
         </div>
-        
-        <p className="text-gray-700 text-sm leading-relaxed">
-          {description}
-        </p>
+
+        <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
       </div>
     </motion.div>
   );

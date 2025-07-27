@@ -1,27 +1,33 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' }
-  ];
+  const socialLinks = [{ icon: Instagram, href: "#", label: "Instagram" }];
 
   const quickLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/projects', label: 'Our Projects' },
-    { href: '/contact', label: 'Contact' },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/projects", label: "Our Projects" },
+    { href: "/contact", label: "Contact" },
   ];
 
   const services = [
-    'Residential Construction',
-    'Commercial Building',
-    'Renovat  ion Services',
-    'Interior Design',
+    "Residential Construction",
+    "Commercial Building",
+    "Renovat  ion Services",
+    "Interior Design",
   ];
 
   return (
@@ -35,14 +41,15 @@ const Footer = () => {
                 src="/logo.png"
                 alt="Aiyyappa Builders Logo"
                 className="h-12 w-12 object-contain invert"
-                style={{ filter: 'invert(1)' }}
+                style={{ filter: "invert(1)" }}
               />
               <span className="text-xl font-bold">
                 Aiyyappa <span className="text-amber-500">Builders</span>
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Building dreams with quality craftsmanship, innovative design, and reliable service for over a decade.
+              Building dreams with quality craftsmanship, innovative design, and
+              reliable service for over a decade.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -97,13 +104,19 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-amber-500 flex-shrink-0 mt-1" />
                 <div className="text-gray-400 text-sm">
                   <div>
-                    <span className="font-semibold">Permanent address:</span><br />
-                    7 Pandimankovil street. Pon.Puduppatti,<br />
+                    <span className="font-semibold">Permanent address:</span>
+                    <br />
+                    7 Pandimankovil street. Pon.Puduppatti,
+                    <br />
                     Ponnamaravathy Taluk. Pudukkottai dist
                   </div>
                   <div className="mt-2">
-                    <span className="font-semibold">Communication Address:</span><br />
-                    36/2 Annapoorani Illam, AV, ARM street.<br />
+                    <span className="font-semibold">
+                      Communication Address:
+                    </span>
+                    <br />
+                    36/2 Annapoorani Illam, AV, ARM street.
+                    <br />
                     Magernombutal Thidal. Karaikudi 630001
                   </div>
                 </div>
@@ -128,7 +141,8 @@ const Footer = () => {
           className="border-t border-gray-800 mt-8 pt-8 text-center"
         >
           <p className="text-gray-400">
-            © 2024 Aiyyappa Builders. All rights reserved. Developed by @strucureo
+            © 2024 Aiyyappa Builders. All rights reserved. Developed by
+            @strucureo
           </p>
         </motion.div>
       </div>

@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity';
+import {defineType, defineField} from 'sanity'
 
 export default defineType({
   name: 'project',
@@ -26,9 +26,9 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Residential', value: 'Residential' },
-          { title: 'Commercial', value: 'Commercial' },
-          { title: 'Renovation', value: 'Renovation' },
+          {title: 'Residential', value: 'Residential'},
+          {title: 'Commercial', value: 'Commercial'},
+          {title: 'Renovation', value: 'Renovation'},
         ],
       },
     }),
@@ -41,7 +41,7 @@ export default defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
-      options: { hotspot: true },
+      options: {hotspot: true},
     }),
   ],
-});
+})

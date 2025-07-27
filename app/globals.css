@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --construction-beige: #F5F1EB;
-  --construction-sand: #D4A574;
-  --construction-orange: #B8860B;
-  --construction-gray: #2C2C2C;
-  --construction-light-gray: #F8F9FA;
+  --construction-beige: #f5f1eb;
+  --construction-sand: #d4a574;
+  --construction-orange: #b8860b;
+  --construction-gray: #2c2c2c;
+  --construction-light-gray: #f8f9fa;
 }
 
 @layer base {
@@ -48,7 +48,7 @@
   .construction-gradient {
     @apply bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50;
   }
-  
+
   .construction-text-gradient {
     @apply bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent;
   }

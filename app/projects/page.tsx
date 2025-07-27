@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import ProjectCard from '@/components/ProjectCard';
-import { sanityClient } from '@/lib/sanity.client';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import ProjectCard from "@/components/ProjectCard";
+import { sanityClient } from "@/lib/sanity.client";
 
-const filterTabs = ['All', 'Residential', 'Commercial', 'Renovation'];
+const filterTabs = ["All", "Residential", "Commercial", "Renovation"];
 
 const fetchProjects = async () => {
   const query = `*[_type == "project"]|order(date desc){
@@ -21,7 +21,7 @@ const fetchProjects = async () => {
 };
 
 const ProjectsPage = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState("All");
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,9 +32,10 @@ const ProjectsPage = () => {
     });
   }, []);
 
-  const filteredProjects = activeFilter === 'All'
-    ? projects
-    : projects.filter((project: any) => project.category === activeFilter);
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((project: any) => project.category === activeFilter);
 
   return (
     <div className="min-h-screen pt-16">
@@ -77,8 +78,8 @@ const ProjectsPage = () => {
                 onClick={() => setActiveFilter(tab)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeFilter === tab
-                    ? 'bg-amber-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? "bg-amber-600 text-white shadow-lg"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {tab}
@@ -94,7 +95,9 @@ const ProjectsPage = () => {
 
           {/* Projects Grid */}
           {loading ? (
-            <div className="text-center py-20 text-xl text-gray-500">Loading projects...</div>
+            <div className="text-center py-20 text-xl text-gray-500">
+              Loading projects...
+            </div>
           ) : (
             <motion.div
               layout

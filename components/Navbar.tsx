@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import Image from 'next/image';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +16,15 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/contact', label: 'Contact' },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/projects", label: "Projects" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -32,9 +32,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,8 +65,8 @@ const Navbar = () => {
                 <a
                   className={`relative px-3 py-2 text-sm font-medium transition-colors ${
                     pathname === link.href
-                      ? 'text-amber-600'
-                      : 'text-gray-700 hover:text-amber-600'
+                      ? "text-amber-600"
+                      : "text-gray-700 hover:text-amber-600"
                   }`}
                 >
                   {link.label}
@@ -93,7 +91,11 @@ const Navbar = () => {
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </motion.div>
             </button>
           </div>
@@ -105,7 +107,7 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t shadow-lg"
           >
@@ -116,8 +118,8 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-2 text-base font-medium transition-colors ${
                       pathname === link.href
-                        ? 'text-amber-600 bg-amber-50'
-                        : 'text-gray-700 hover:text-amber-600 hover:bg-gray-50'
+                        ? "text-amber-600 bg-amber-50"
+                        : "text-gray-700 hover:text-amber-600 hover:bg-gray-50"
                     }`}
                   >
                     {link.label}

@@ -1,14 +1,15 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'BuildCraft Construction - Premium Building Solutions',
-  description: 'Professional construction services with quality craftsmanship and timely delivery',
+  title: "BuildCraft Construction - Premium Building Solutions",
+  description:
+    "Professional construction services with quality craftsmanship and timely delivery",
 };
 
 export default function RootLayout({

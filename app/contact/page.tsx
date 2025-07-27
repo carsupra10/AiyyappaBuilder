@@ -1,66 +1,69 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
-import Button from '@/components/Button';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
+import Button from "@/components/Button";
+import Image from "next/image";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: "", email: "", phone: "", message: "" });
     }, 3000);
   };
 
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Phone',
-      details: '+919842069078',
-      subtitle: 'Call us anytime',
+      title: "Phone",
+      details: "+919842069078",
+      subtitle: "Call us anytime",
     },
     {
       icon: Mail,
-      title: 'Email',
-      details: 'aiyyappabuilders@gmail.com',
-      subtitle: 'We reply within 24 hours',
+      title: "Email",
+      details: "aiyyappabuilders@gmail.com",
+      subtitle: "We reply within 24 hours",
     },
     {
       icon: MapPin,
-      title: 'Address',
-      details: 'Pandimankovil Street.Pon.Puduppatti',
-      subtitle: 'Ponnamaravathy - 622408',
+      title: "Address",
+      details: "Pandimankovil Street.Pon.Puduppatti",
+      subtitle: "Ponnamaravathy - 622408",
     },
     {
       icon: Clock,
-      title: 'Hours',
-      details: 'Mon - Fri: 8AM - 6PM',
-      subtitle: 'Sat: 9AM - 4PM', 
+      title: "Hours",
+      details: "Mon - Fri: 8AM - 6PM",
+      subtitle: "Sat: 9AM - 4PM",
     },
   ];
 
@@ -69,14 +72,16 @@ const ContactPage = () => {
       {/* Hero Section */}
       <section className="relative h-96 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg"
             alt="Contact BuildCraft"
+            fill
+            priority
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +90,8 @@ const ContactPage = () => {
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl md:text-2xl max-w-2xl mx-auto">
-            Ready to start your construction project? Let's discuss your vision.
+            Ready to start your construction project? Let&apos;s discuss your
+            vision.
           </p>
         </motion.div>
       </section>
@@ -102,9 +108,12 @@ const ContactPage = () => {
               transition={{ duration: 0.8 }}
               className="bg-white rounded-2xl shadow-xl p-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Get a Free Quote</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Get a Free Quote
+              </h2>
               <p className="text-gray-600 mb-8">
-                Fill out the form below and we'll get back to you within 24 hours with a detailed quote.
+                Fill out the form below and we&apos;ll get back to you within 24
+                hours with a detailed quote.
               </p>
 
               {isSubmitted ? (
@@ -114,16 +123,22 @@ const ContactPage = () => {
                   className="text-center py-12"
                 >
                   <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    Thank You!
+                  </h3>
                   <p className="text-gray-600">
-                    Your message has been sent successfully. We'll contact you soon.
+                    Your message has been sent successfully. We&apos;ll contact
+                    you soon.
                   </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Full Name
                       </label>
                       <input
@@ -138,7 +153,10 @@ const ContactPage = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Phone Number
                       </label>
                       <input
@@ -153,9 +171,12 @@ const ContactPage = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Email Address
                     </label>
                     <input
@@ -169,9 +190,12 @@ const ContactPage = () => {
                       placeholder="john@example.com"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Project Details
                     </label>
                     <textarea
@@ -185,7 +209,7 @@ const ContactPage = () => {
                       placeholder="Tell us about your construction project..."
                     />
                   </div>
-                  
+
                   <Button
                     type="submit"
                     disabled={isSubmitting}
@@ -195,11 +219,15 @@ const ContactPage = () => {
                     {isSubmitting ? (
                       <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        transition={{
+                          duration: 1,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
                         className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                       />
                     ) : (
-                      'Send Message'
+                      "Send Message"
                     )}
                   </Button>
                 </form>
@@ -215,10 +243,13 @@ const ContactPage = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  Get in Touch
+                </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  We're here to help bring your construction dreams to life. Contact us today 
-                  to discuss your project and get a free, no-obligation quote.
+                  We&apos;re here to help bring your construction dreams to
+                  life. Contact us today to discuss your project and get a free,
+                  no-obligation quote.
                 </p>
               </div>
 
@@ -226,7 +257,7 @@ const ContactPage = () => {
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={info.title}
-                    initial={{ opacity: 0, y:20 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -238,8 +269,12 @@ const ContactPage = () => {
                         <info.icon className="h-6 w-6 text-amber-600" />
                       </div>
                       <div className="min-w-0 w-full">
-                        <h3 className="font-semibold text-gray-900 mb-1">{info.title}</h3>
-                        <p className="text-gray-700 font-small truncate w-full max-w-full group-hover:truncate-none group-hover:whitespace-normal group-hover:overflow-visible">{info.details}</p>
+                        <h3 className="font-semibold text-gray-900 mb-1">
+                          {info.title}
+                        </h3>
+                        <p className="text-gray-700 font-small truncate w-full max-w-full group-hover:truncate-none group-hover:whitespace-normal group-hover:overflow-visible">
+                          {info.details}
+                        </p>
                         <p className="text-sm text-gray-500">{info.subtitle}</p>
                       </div>
                     </div>
@@ -259,7 +294,9 @@ const ContactPage = () => {
                   <div className="text-center">
                     <MapPin className="h-12 w-12 text-amber-600 mx-auto mb-2" />
                     <p className="text-gray-700 font-medium">Interactive Map</p>
-                    <p className="text-sm text-gray-500">123 Construction Ave, Builder City</p>
+                    <p className="text-sm text-gray-500">
+                      123 Construction Ave, Builder City
+                    </p>
                   </div>
                 </div>
               </motion.div>

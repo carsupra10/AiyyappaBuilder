@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Linkedin, Mail } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Linkedin, Mail } from "lucide-react";
 
 interface TeamCardProps {
   name: string;
@@ -62,7 +62,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           </div>
         </div>
       </div>
-      
+
       <div className="p-6">
         <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
         <p className="text-amber-600 font-medium mb-3">{position}</p>

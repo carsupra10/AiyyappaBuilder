@@ -1,44 +1,56 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown, Award, Clock, Shield, Users, ChevronRight } from 'lucide-react';
-import Button from '@/components/Button';
-import Link from 'next/link';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowDown,
+  Award,
+  Clock,
+  Shield,
+  Users,
+  ChevronRight,
+} from "lucide-react";
+import Button from "@/components/Button";
+import Link from "next/link";
 
 const HomePage = () => {
   const features = [
     {
       icon: Award,
-      title: 'Quality Work',
-      description: 'Premium materials and skilled craftsmanship in every project we deliver.',
+      title: "Quality Work",
+      description:
+        "Premium materials and skilled craftsmanship in every project we deliver.",
     },
     {
       icon: Clock,
-      title: 'Timely Delivery',
-      description: 'We respect deadlines and complete projects on schedule without compromising quality.',
+      title: "Timely Delivery",
+      description:
+        "We respect deadlines and complete projects on schedule without compromising quality.",
     },
     {
       icon: Shield,
-      title: 'Licensed & Insured',
-      description: 'Fully licensed, bonded, and insured for your complete peace of mind.',
+      title: "Licensed & Insured",
+      description:
+        "Fully licensed, bonded, and insured for your complete peace of mind.",
     },
     {
       icon: Users,
-      title: 'Expert Team',
-      description: 'Experienced professionals dedicated to bringing your vision to life.',
+      title: "Expert Team",
+      description:
+        "Experienced professionals dedicated to bringing your vision to life.",
     },
   ];
 
   const scrollToProjects = () => {
-    document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById("projects-section")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center construction-gradient overflow-hidden">
-
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/10 z-10" />
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -54,7 +66,9 @@ const HomePage = () => {
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight text-shadow"
             >
               Building Your
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-yellow-400 block">Dreams</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-yellow-400 block">
+                Dreams
+              </span>
               Into Reality
             </motion.h1>
             <motion.p
@@ -63,8 +77,9 @@ const HomePage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
             >
-              Professional construction services with unmatched quality, innovation, and reliability. 
-              Let us transform your vision into exceptional structures.
+              Professional construction services with unmatched quality,
+              innovation, and reliability. Let us transform your vision into
+              exceptional structures.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -118,8 +133,8 @@ const HomePage = () => {
               Why Choose Aiyyappa Builders?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We combine decades of experience with innovative techniques to deliver 
-              exceptional results that exceed expectations.
+              We combine decades of experience with innovative techniques to
+              deliver exceptional results that exceed expectations.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -136,8 +151,12 @@ const HomePage = () => {
                 <div className="bg-amber-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-200 transition-colors">
                   <feature.icon className="h-8 w-8 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -160,7 +179,7 @@ const HomePage = () => {
                 className="rounded-2xl shadow-2xl"
               />
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -172,14 +191,16 @@ const HomePage = () => {
                 Our Mission: Building Excellence
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                At BuildCraft, we believe that every structure tells a story. Our mission is to 
-                create buildings that not only meet functional requirements but also inspire and 
-                endure for generations.
+                At BuildCraft, we believe that every structure tells a story.
+                Our mission is to create buildings that not only meet functional
+                requirements but also inspire and endure for generations.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                With over 15 years of experience in the construction industry, we've built our 
-                reputation on trust, quality, and innovation. From residential homes to commercial 
-                complexes, we approach every project with the same level of dedication and attention to detail.
+                With over 15 years of experience in the construction industry,
+                we've built our reputation on trust, quality, and innovation.
+                From residential homes to commercial complexes, we approach
+                every project with the same level of dedication and attention to
+                detail.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/about">
